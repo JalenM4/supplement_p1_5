@@ -5,12 +5,20 @@ namespace supplement_p1_5;
 
 public class Class1
 {
+    /// <summary>
+    /// Created shape class for shapes to pull measurements from and
+    /// to refer from
+    /// </summary>
     public abstract class Shape3D
     {
         public abstract double GetVolume();
         public abstract double GetSurfaceArea();
         public abstract string Dump();
     }
+    /// <summary>
+    /// Cube class that takes side measurements and validates after
+    /// inheriting from the shape3d class
+    /// </summary>
     public class Cube : Shape3D
     {
         private double side; 
@@ -22,6 +30,11 @@ public class Class1
 ;            }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="side"> side is a variable of the length 
+        /// of one side on the created cube</param>
         public Cube(double side)
         {
             Side = side;
@@ -49,6 +62,10 @@ public class Class1
             return $"Cube: Side={Side}, SurfaceArea={GetSurfaceArea()}, Volume={GetVolume}";
         }
     }
+    /// <summary>
+    /// created sphere class inheriting from shape3d providing a radius
+    /// and height value to be passed through volume and surface area
+    /// </summary>
     public class Sphere : Shape3D
     {
         private double radius;
@@ -86,6 +103,11 @@ public class Class1
             return $"Sphere: Radius={Radius}, SurfaceArea={GetSurfaceArea()},Volume={GetVolume()}";
         }
     }
+    /// <summary>
+    /// Cylinder clalss that inherits from shape3D and has two main variable
+    /// radius and height, they both pass through the volume and surface area
+    /// function to be checked and validated
+    /// </summary>
     public class Cylinder : Shape3D
     {
         private double radius;
@@ -132,6 +154,30 @@ public class Class1
         public override string Dump()
         {
             return $"Cylinder : Radius={Radius}, Height={Height}, SurfaceArea={GetSurfaceArea()}, Volume={GetVolume()}";
+        }
+    }
+    /// <summary>
+    /// last function that writes values and 'contructs'
+    /// the shapes after taking the final values from inherited classes
+    /// </summary>
+    public class buildShape
+    {
+        public static void Main(string[] args)
+        {
+            try{
+                Cube myCube = new Cube(5);
+                Console.WriteLine(myCube.Dump());
+
+                Sphere mySphere = new Sphere(3);
+                Console.WriteLine(myCube.Dump());
+
+                Cylinder myCylinder = new Cylinder(2, 7);
+                Console.WriteLine(myCylinder.Dump());
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }
     }
 
