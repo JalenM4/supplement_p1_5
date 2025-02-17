@@ -11,8 +11,25 @@ public class Class1
     /// </summary>
     public abstract class Shape3D
     {
+        /// <summary>
+        ///  abstract funtion that finds the volume of a given shape 
+        ///  and returns it as a double
+        /// </summary>
+        /// <returns> returns a value equaling the volume of random 
+        /// generated shape</returns>
         public abstract double GetVolume();
+        /// <summary>
+        /// abstract funtion that finds the surface area of a given shape 
+        ///  and returns it as a double
+        /// </summary>
+        /// <returns>returns a value giving the surface area of random 
+        /// generated shape</returns>
         public abstract double GetSurfaceArea();
+        /// <summary>
+        /// abstract function that returns values as a string returning
+        /// the good values
+        /// </summary>
+        /// <returns> a astring value giving information on created shape 3</returns>
         public abstract string Dump();
     }
     /// <summary>
@@ -149,7 +166,7 @@ public class Class1
         }
         public override double GetSurfaceArea()
         {
-            return 2 * Math.PI * Radius * Radius * (Radius + Height);
+            return 2 * Math.PI * Radius * (Radius + Height);
         }
         public override string Dump()
         {
