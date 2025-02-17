@@ -6,15 +6,20 @@ namespace Shapes
 public class Shape3D
 {
     public string Name { get ; set;}
+    public List<double> Dimensions { get; set; }
 
-    public Shape3D(string name){
+    public Shape3D(string name, List<double> dimensions){
         Name = name;
+        Dimensions = dimensions;
     }
 
-    public override string ToString()
-    {
-        return Name;
-    }
+   public void Dump()
+        {
+            Console.WriteLine("----- Shape Dump -----");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine("Dimensions: " + (Dimensions.Count > 0 ? string.Join(", ", Dimensions) : "None"));
+            Console.WriteLine("----------------------");
+        }
 }
 
 public class ShapeContainer
