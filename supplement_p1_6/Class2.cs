@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Shapes
 {
@@ -58,6 +59,11 @@ public class ShapeContainer
             throw new ArgumentOutOfRangeException(nameof(index), "Index is out of range");
 
         shapes.RemoveAt(index);
+    }
+    public void CreateNullShapeThrowsArgumentNullException()
+    {
+        var container = new ShapeContainer();
+        Assert.Throws<ArgumentNullException>(() => container.Create(null));
     }
 }
 }
