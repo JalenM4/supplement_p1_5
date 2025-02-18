@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace Shapes
 {
+/// <summary>
+/// Creates shape class for other shapes to derive from
+/// </summary>
 public class Shape3D
 {
     public string Name { get ; set;}
@@ -23,6 +26,9 @@ public class Shape3D
         }
 }
 
+/// <summary>
+/// creates space for shapes to be stored and contained
+/// </summary>
 public class ShapeContainer
 {
    // list to store shapes
